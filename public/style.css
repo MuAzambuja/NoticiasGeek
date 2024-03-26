@@ -22,6 +22,11 @@ header{
     width: 50%;
 }
 
+.logo a{
+    color: black;
+    text-decoration: none;
+}
+
 .logo h2{
     padding-top: 5px;
 }
@@ -250,7 +255,56 @@ footer{
     font-weight: bold;
 }
 
+section.noticia {
+    padding: 20px 0;
+    background-color: #eaeaea;
+}
+
+.noticia-single{
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    width: 58%;
+    margin-right: 2%;
+}
+
+.noticia-single h2{
+    color: #303336;
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+.noticia-single span{
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    color: #858585;
+}
+
+.noticia-single p{
+    color: #7b8591;
+    font-size: 15px;
+    line-height: 26px;
+    margin-top: 15px;
+}
+
+.noticia-single h3{
+    color: #7b8591;
+    font-size: 26px;
+    margin: 10px 0;
+}
+
 @media screen and (max-width: 768px){
+    .noticia-single{
+        width: 100%;
+        margin-bottom: 20px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .logo{
+        text-align: center;
+    }
     .logo,.form-busca{
         width: 100%;
         text-align: center; 
@@ -265,6 +319,8 @@ footer{
     .mais-lidas, .ultimas{
         width: 100%;
         margin-bottom: 10px;
+        margin-left: 16px;
+        margin-right: 16px;
     }
     .box-ultima-single{
         width: 100%; 

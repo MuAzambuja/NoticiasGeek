@@ -1,16 +1,16 @@
 const express = require('express');
-/**const mongoose = require('mongoose');**/
+const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
 const path = require('path');
 
 const app = express();
 
-/**mongoose.connect('mongodb+srv://root:XLLmxgwfIbL1W4wN@cluster0.lwxo0uv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{useNewUrlParser: true, useUnifiedTopology: true}).then(function(){
+mongoose.connect('mongodb+srv://root:XLLmxgwfIbL1W4wN@cluster0.lwxo0uv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',{useNewUrlParser: true, useUnifiedTopology: true}).then(function(){
     console.log("Conectado com sucesso");
 }).catch(function(err){
     console.log(err.message);
-})**/
+})
 
 app.use(bodyParser.json());             //to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({         //to support URL-encoded bodies
@@ -28,13 +28,15 @@ app.get('/',(req,res)=>{
     if(req.query.busca == null){
         res.render('home', {});
     }else{
-        res.send('Voce buscou: '+req.query.busca);
+        res.render('busca', {});
     }
 
 });
 
 app.get('/:slug',(req,res)=>{
-    res.send(req.params.slug);
+    //res.send(req.params.slug);
+    res.render('single', {});
+
 })
 
 app.listen(5000,()=>{
